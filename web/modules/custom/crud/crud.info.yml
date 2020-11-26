@@ -1,0 +1,9 @@
+name: CRUD
+package: Custom
+Description: 'This Module Make a  form that have all crud operations'
+
+type: module
+core_version_requirement: ^8.9 || ^9.0
+
+version: '1.0'
+project: 'crud'

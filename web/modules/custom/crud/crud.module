@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * In this file are the hooks
+ */
+
+/**
+ * Implements hook_help().
+ */
+
+function crud_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match)
+{
+
+
+    switch ($route_name) {
+            // Main module help for the block module.
+        case 'help.page.crud':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .=  '<p>' . t('This module is used to see how a crud works in Drupal 9') . '</p>';
+            return $output;
+            // Help for another path in the block module.
+        case 'crud.info':
+            $output = '';
+            $output .= '<h3>' . t('Form crud') . '</h3>';
+            return $output;
+    }
+}

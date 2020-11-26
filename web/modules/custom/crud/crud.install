@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for File module.
+ */
+/**
+ * Implements hook_schema().
+ */
+function crud_schema()
+{
+    $schema['myusers'] = array(
+        'description' => 'Table alternative fo usuers',
+        'fields' => array(
+            'crud_id' => array(
+                'description' => 'crud ID.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'crud_name' => array(
+                'description' => 'The name of the user',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'lastname' => array(
+                'description' => 'The name of the object type in which the file is used.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+        ),
+        'primary key' => array('crud_id'),
+        'indexes' => array(
+            'name_lastname' => array('crud_name', 'lastname'),
+        ),
+    );
+    return $schema;
+}

@@ -1,0 +1,7 @@
+crud.info:
+  path: '/crud'
+  defaults:
+    _controller: '\Drupal\crud\Controller\crudController::info'
+    _title: 'Crud Drupal 9'
+  requirements:
+    _permission: 'access content'
